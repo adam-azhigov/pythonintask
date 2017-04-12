@@ -23,7 +23,7 @@ while count < 6:
 
 guessWord = input("Время отгадывать: ")
 if guessWord == pobeda:
-    print("Поздравления")
+    print("Поздравления.")
 else:
     print("Вот и все дружок")
 
