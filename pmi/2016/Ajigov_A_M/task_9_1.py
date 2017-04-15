@@ -7,24 +7,34 @@
 #08.04.2017
 
 import random
-count = 0
-WORDS = ("Ислам", "Смысл", "Дорбо", "Жизнь", "#ВсяСутьВОднойИгре")
-pobeda = random.choice(WORDS)
+WORDS = ("анаграмма", "питон", "игрок", "компьютер")
+word=random.choice(WORDS)
+number=len(word)
+print('букв в слове: ' + str(number))
 
-print("Я выбрал, в слове", len(pobeda), "букв. У тебя 5 попыток.")
+for i in range(5):
+    k=0
+    a=0
+    number=len(word)
+    check=word[a]
+    letter=input('назовите букву: ')
+    while (number >1):
+         if (letter == check):
+            k=k+1
+            a=a+1
+            check=word[a]
+         else:
+            a=a+1
+            check=word[a]
+         number=number - 1
+    if (letter
+        ==word[a]):
+        k=k+1
+    print ('Буква '+ '"'+ str(letter)+'"' + ' встречается в слове '+ str (k) + ' раз ')
+answer=input ('Ваш ответ: ')
 
-while count < 6:
-    count += 1
-    guessChar = input("Твоя очередь: ")
-    if guessChar.lower() in pobeda.lower():
-        print("Да")
-    else:
-        print("Нет")
-
-guessWord = input("Время отгадывать: ")
-if guessWord == pobeda:
-    print("Поздравления.")
+if (answer==word):
+    print ('Поздравляем,вы выиграли! правильный ответ: ' + str(word))
 else:
-    print("Вот и все дружок")
-
-input("\n\nЖми Enter ")
+    print ('К сожалению вы проиграли.')
+input ("\n\nНажмите ENTER для продолжения")
